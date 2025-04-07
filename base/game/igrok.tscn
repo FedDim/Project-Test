@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://c4wq6d7kabdg"]
+
+[ext_resource type="Script" uid="uid://cc0n3yplyqvdy" path="res://base/game/igrok.gd" id="1_vs4g8"]
+[ext_resource type="Texture2D" uid="uid://igwwcvd2f4er" path="res://asseti/personaji/chel.png" id="2_vs4g8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs4g8"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(64, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y45vx"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(48, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyqu8"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(80, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq1hp"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(0, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u48l"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(16, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlocs"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(112, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oamo2"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(32, 0, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p30ff"]
+atlas = ExtResource("2_vs4g8")
+region = Rect2(96, 0, 16, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyqu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs4g8")
+}],
+"loop": true,
+"name": &"s",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y45vx")
+}],
+"loop": true,
+"name": &"sv",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyqu8")
+}],
+"loop": true,
+"name": &"sz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq1hp")
+}],
+"loop": true,
+"name": &"u",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u48l")
+}],
+"loop": true,
+"name": &"uv",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlocs")
+}],
+"loop": true,
+"name": &"uz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oamo2")
+}],
+"loop": true,
+"name": &"v",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p30ff")
+}],
+"loop": true,
+"name": &"z",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs4g8"]
+size = Vector2(80, 135)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_vs4g8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_lyqu8")
+animation = &"u"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vs4g8")
